@@ -3,6 +3,8 @@ import Header from "./Header";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseList from "./ExpenseList";
 import axios from "axios";
+import BalanceSummary from "./BalanceSummary";
+
 
 const Dashboard = () => {
   const [expenses, setExpenses] = useState([]);
@@ -58,6 +60,7 @@ const Dashboard = () => {
   return (
     <div>
       <Header />
+      <BalanceSummary expenses={expenses} initialBalance={0} />
       <ExpenseForm onAdd={handleAddExpense} />
       <ExpenseList expenses={expenses} onDelete={handleDeleteExpense} />
     </div>
